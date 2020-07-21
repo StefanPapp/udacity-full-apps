@@ -15,7 +15,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   app.use(bodyParser.json());
 
   //filter image endpoint
-  app.get("/filteredimage", async(req, res) => {
+  app.get("/filteredimage", async(req:express.Request, res:express.Response) => {
     
     if(!req.query.image_url) {
       res.status(404).send("image_url query parameter required")
@@ -34,7 +34,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   });
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async (req:express.Request, res:express.Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
